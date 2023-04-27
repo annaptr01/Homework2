@@ -51,18 +51,41 @@ int user_number = Convert.ToInt32(Console.ReadLine());
 //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, 
 //и проверяет, является ли этот день выходным.
 
-void Say(number)
+int Say(string number)
 {
-    if (number >= 6)
+   Console.Write(number);
+   string value = Console.ReadLine();
+   int result = Convert.ToInt32(value);
+   return result;
+}
+bool IsWeekend(int weekDay)
+{
+    if(weekDay > 5)
     {
-        Console.WriteLine("YES! Number of the day: " + number + " is day off");
+        return true;
+    }
+    return false;
+}
+
+bool ValWeekday(int number_1)
+{
+    if(number_1 > 0 && number_1 <= 7)
+    {
+        return true;
+    }
+    Console.WriteLine("Its is day of the week!");
+    return false;
+}
+
+int weekDay = Say("Enter day of the week: ");
+if(ValWeekday(weekDay))
+{
+    if (IsWeekend(weekDay))
+    {
+        Console.WriteLine("Finally its weekend!");
     }
     else
     {
-        Console.WriteLine("NO! Number of the day: " + number + " is not day off");
+        Console.WriteLine("You need to work little bit more until weekends");
     }
 }
-
-Console.WriteLine("Enter your number of the day: ");
-int new_number = Convert.ToInt32(Console.ReadLine());
-Say(new_number);
